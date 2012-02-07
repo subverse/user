@@ -31,6 +31,7 @@
 				<% else %>					
 					<li><%= link_to "sign_out", destroy_user_session_path, :method => :delete %></li>
 				<% end %>
+				<li><%= link_to "access", accesses_path %></li>
       </ul>
     </li>
   </ul>
