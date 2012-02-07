@@ -14,8 +14,11 @@
 <div id="page">
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
-<%= current_user.email %>
+<% if current_user.nil? %>	
+	SIGN IN!
+<% else %>					
+	<%= current_user.email %>
+<% end %>	
 <hr>
 
 <div id="sidebar">
