@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120207192806) do
 
-  create_table "accesses", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.integer  "level"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
