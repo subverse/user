@@ -14,24 +14,28 @@
 <div id="page">
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+
 <% if current_user.nil? %>	
 	SIGN IN!
-<% else %>					
-	<%= current_user.email %>
+<% else %>	
+	<% if not current_user.account.nil? %>	
+		<%= current_user.account.name %>
+	<% end %>	
+	<%= " (#{current_user.email})" %>
 <% end %>	
 <hr>
 
 <div id="sidebar">
   <ul id="sidebar-items">
     <li>
-      <h3>Browser</h3>
+      <h3>Menu</h3>
       <ul class="links">
 				<% if current_user.nil? %>	
-					<li><%= link_to "sign_in", "/users/sign_in" %></li>
+					<li><%= link_to "sign_in", new_user_session_path %></li>
 				<% else %>					
 					<li><%= link_to "sign_out", destroy_user_session_path, :method => :delete %></li>
 				<% end %>
-				<li><%= link_to "access", accesses_path %></li>
+				<li><%= link_to "accounts", accounts_path %></li>
       </ul>
     </li>
   </ul>

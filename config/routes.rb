@@ -1,6 +1,6 @@
 Comapp::Application.routes.draw do
 
-  resources :accesses
+  resources :accounts
 
   devise_for :users
   delete "users/sign_out"
